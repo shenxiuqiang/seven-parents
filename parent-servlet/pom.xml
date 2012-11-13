@@ -1,0 +1,111 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<artifactId>parent-java</artifactId>
+		<groupId>org.sevensource.parents</groupId>
+		<version>0.9.5</version>
+		<relativePath>../parent-java/pom.xml</relativePath>
+	</parent>
+	
+	<artifactId>parent-servlet</artifactId>
+	<packaging>pom</packaging>
+	<name>Parent POM for Spring projects that are deployed in a Servlet context</name>
+	<description>
+		Parent POM for Spring projects that are deployed in a Servlet context.
+		WARs should inherit from parent-webapp.
+	</description>
+
+	<properties>
+		<servlet-api.version>3.0.1</servlet-api.version>
+		<jstl.version>1.2</jstl.version>
+	</properties>
+
+	<dependencies>
+
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>${servlet-api.version}</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>javax.servlet.jsp.jstl</groupId>
+			<artifactId>jstl-api</artifactId>
+			<version>${jstl.version}</version>
+			<exclusions>
+				<exclusion>
+					<artifactId>servlet-api</artifactId>
+					<groupId>javax.servlet</groupId>
+				</exclusion>
+				<exclusion>
+					<artifactId>jsp-api</artifactId>
+					<groupId>javax.servlet.jsp</groupId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<dependency>
+			<groupId>org.glassfish.web</groupId>
+			<artifactId>jstl-impl</artifactId>
+			<version>${jstl.version}</version>
+			<!-- <scope>provided</scope> -->
+			<exclusions>
+				<exclusion>
+					<artifactId>servlet-api</artifactId>
+					<groupId>javax.servlet</groupId>
+				</exclusion>
+				<exclusion>
+					<artifactId>jsp-api</artifactId>
+					<groupId>javax.servlet.jsp</groupId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+
+
+		<!--
+			<dependency>
+			<groupId>javax.el</groupId>
+			<artifactId>el-api</artifactId>
+			<version>1.0</version>
+			<scope>provided</scope>
+			</dependency>
+
+			<dependency>
+			<groupId>javax.servlet.jsp</groupId>
+			<artifactId>jsp-api</artifactId>
+			<version>2.1</version>
+			<scope>provided</scope>
+			</dependency>
+		-->
+	</dependencies>
+
+	<developers>
+		<developer>
+			<id>pgaschuetz</id>
+			<email>philipp@sevensource.org</email>
+		</developer>
+	</developers>
+
+	<scm>
+		<url>http://github.com/sevensource/seven-parents/parent-servlet</url>
+		<connection>scm:git:git@github.com:sevensource/seven-parents.git</connection>
+		<developerConnection>scm:git:git@github.com:sevensource/seven-parents.git</developerConnection>
+    <tag>0.9.5</tag>
+  </scm>
+
+	<licenses>
+		<license>
+			<name>The Apache Software License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+		</license>
+	</licenses>
+
+	<organization>
+		<name>SevenSource</name>
+		<url>http://www.sevensource.org/</url>
+	</organization>
+
+	<url>http://www.sevensource.org/</url>
+</project>
