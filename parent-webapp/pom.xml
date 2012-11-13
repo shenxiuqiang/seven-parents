@@ -1,0 +1,112 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<artifactId>parent-servlet</artifactId>
+		<groupId>org.sevensource.parents</groupId>
+		<version>0.9.5-SNAPSHOT</version>
+		<relativePath>../parent-servlet/pom.xml</relativePath>
+	</parent>
+	<artifactId>parent-webapp</artifactId>
+	<packaging>pom</packaging>
+	<name>Parent POM for Spring related WebApps (WARs)</name>
+	<description>
+		Parent POM for Spring related WebApps (WARs).
+		JARs, that are included in WARs should rather use parent-servlet
+	</description>
+
+	<dependencies>
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-classic</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>log4j-over-slf4j</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>jcl-over-slf4j</artifactId>
+		</dependency>
+	</dependencies>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.apache.tiles</groupId>
+				<artifactId>tiles-jsp</artifactId>
+				<version>2.2.2</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>2.2</version>
+				<configuration>
+					<webXml>src/main/webapp/WEB-INF/web.xml</webXml>
+					<failOnMissingWebXml>false</failOnMissingWebXml>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-eclipse-plugin</artifactId>
+				<version>2.9</version>
+				<!-- <version>2.7</version> -->
+				<!-- Note 2.8 does not work with AspectJ aspect path -->
+				<configuration>
+					<downloadSources>true</downloadSources>
+					<downloadJavadocs>false</downloadJavadocs>
+					<wtpversion>2.0</wtpversion>
+					<jeeversion>6.0</jeeversion>
+
+					<additionalProjectFacets>
+						<jst.web>2.5</jst.web>
+					</additionalProjectFacets>
+					<wtpversion>2.0</wtpversion>
+
+					<wtpapplicationxml>true</wtpapplicationxml>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+	<developers>
+		<developer>
+			<id>pgaschuetz</id>
+			<email>philipp@sevensource.org</email>
+		</developer>
+	</developers>
+
+	<scm>
+		<url>http://github.com/sevensource/seven-parents/parent-webapp</url>
+		<connection>scm:git:git@github.com:sevensource/seven-parents.git</connection>
+		<developerConnection>scm:git:git@github.com:sevensource/seven-parents.git</developerConnection>
+    <tag>HEAD</tag>
+  </scm>
+
+	<licenses>
+		<license>
+			<name>The Apache Software License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+		</license>
+	</licenses>
+
+	<organization>
+		<name>SevenSource</name>
+		<url>http://www.sevensource.org/</url>
+	</organization>
+
+	<url>http://www.sevensource.org/</url>
+
+</project>
