@@ -10,7 +10,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.sevensource.parents</groupId>
 	<artifactId>parent-oss</artifactId>
-	<version>0.9.5-SNAPSHOT</version>
+	<version>0.9.5</version>
 	<packaging>pom</packaging>
 
 	<description>
@@ -115,7 +115,7 @@
 		<url>http://github.com/sevensource/seven-parents/parent-oss</url>
 		<connection>scm:git:git@github.com:sevensource/seven-parents.git</connection>
 		<developerConnection>scm:git:git@github.com:sevensource/seven-parents.git</developerConnection>
-    <tag>HEAD</tag>
+    <tag>0.9.5</tag>
   </scm>
 
 	<licenses>
