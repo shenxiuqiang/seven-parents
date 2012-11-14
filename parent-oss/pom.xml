@@ -10,7 +10,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.sevensource.parents</groupId>
 	<artifactId>parent-oss</artifactId>
-	<version>0.9.6</version>
+	<version>0.9.7</version>
 	<packaging>pom</packaging>
 
 	<description>
@@ -29,6 +29,9 @@
 						<useReleaseProfile>false</useReleaseProfile>
 						<arguments>-Psonatype-oss-release</arguments>
 						<autoVersionSubmodules>true</autoVersionSubmodules>
+						<pushChanges>false</pushChanges>
+						<localCheckout>true</localCheckout>
+						<tagNameFormat>v@{project.version}</tagNameFormat>
 					</configuration>
 				</plugin>
 				
@@ -115,7 +118,7 @@
 		<url>http://github.com/sevensource/seven-parents/parent-oss</url>
 		<connection>scm:git:git@github.com:sevensource/seven-parents.git</connection>
 		<developerConnection>scm:git:git@github.com:sevensource/seven-parents.git</developerConnection>
-    <tag>0.9.6</tag>
+    <tag>v0.9.7</tag>
   </scm>
 
 	<licenses>

@@ -3,7 +3,7 @@
 	<parent>
 		<artifactId>parent-servlet</artifactId>
 		<groupId>org.sevensource.parents</groupId>
-		<version>0.9.6</version>
+		<version>0.9.7</version>
 		<relativePath>../parent-servlet/pom.xml</relativePath>
 	</parent>
 	<artifactId>parent-webapp</artifactId>
@@ -92,7 +92,7 @@
 		<url>http://github.com/sevensource/seven-parents/parent-webapp</url>
 		<connection>scm:git:git@github.com:sevensource/seven-parents.git</connection>
 		<developerConnection>scm:git:git@github.com:sevensource/seven-parents.git</developerConnection>
-    <tag>0.9.6</tag>
+    <tag>v0.9.7</tag>
   </scm>
 
 	<licenses>
