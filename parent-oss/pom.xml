@@ -29,6 +29,9 @@
 						<useReleaseProfile>false</useReleaseProfile>
 						<arguments>-Psonatype-oss-release</arguments>
 						<autoVersionSubmodules>true</autoVersionSubmodules>
+						<pushChanges>false</pushChanges>
+						<localCheckout>true</localCheckout>
+						<tagNameFormat>v@{project.version}</tagNameFormat>
 					</configuration>
 				</plugin>
 				
