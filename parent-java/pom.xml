@@ -3,7 +3,7 @@
 	<parent>
 		<artifactId>parent-oss</artifactId>
 		<groupId>org.sevensource.parents</groupId>
-		<version>0.9.7</version>
+		<version>0.9.8</version>
 		<relativePath>../parent-oss/pom.xml</relativePath>
 	</parent>
 
@@ -25,6 +25,8 @@
 		<spring.data.version>1.1.0.RELEASE</spring.data.version>
 		<cglib.version>2.2.2</cglib.version>
 
+		<joda.time.version>2.1</joda.time.version>
+		
 		<thymeleaf.version>2.0.14</thymeleaf.version>
 		<thymeleaf.tiles.version>1.0.0-beta3</thymeleaf.tiles.version>
 
@@ -130,6 +132,12 @@
 				<artifactId>spring-context</artifactId>
 				<version>${spring.version}</version>
 			</dependency>
+			
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-context-support</artifactId>
+				<version>${spring.version}</version>
+			</dependency>
 
 			<dependency>
 				<groupId>org.springframework</groupId>
@@ -170,11 +178,18 @@
 
 
 			<!-- COMMON STUFF -->
-
+			
+			<!-- @Generated, @PostConstruct, etc. -->
 			<dependency>
 				<groupId>javax.annotation</groupId>
 				<artifactId>jsr250-api</artifactId>
 				<version>1.0</version>
+			</dependency>
+			
+			<dependency>
+				<groupId>joda-time</groupId>
+				<artifactId>joda-time</artifactId>
+				<version>${joda.time.version}</version>
 			</dependency>
 
 			<!-- Mail -->
@@ -304,7 +319,7 @@
 		<url>http://github.com/sevensource/seven-parents/parent-java</url>
 		<connection>scm:git:git@github.com:sevensource/seven-parents.git</connection>
 		<developerConnection>scm:git:git@github.com:sevensource/seven-parents.git</developerConnection>
-		<tag>v0.9.7</tag>
+		<tag>v0.9.8</tag>
 	</scm>
 
 	<licenses>
