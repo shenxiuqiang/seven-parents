@@ -3,7 +3,7 @@
 	<parent>
 		<artifactId>parent-servlet</artifactId>
 		<groupId>org.sevensource.parents</groupId>
-		<version>0.9.10-SNAPSHOT</version>
+		<version>0.9.11-SNAPSHOT</version>
 		<relativePath>../parent-servlet/pom.xml</relativePath>
 	</parent>
 	<artifactId>parent-webapp</artifactId>
