@@ -3,7 +3,7 @@
 	<parent>
 		<artifactId>parent-oss</artifactId>
 		<groupId>org.sevensource.parents</groupId>
-		<version>0.9.10-SNAPSHOT</version>
+		<version>0.9.10</version>
 		<relativePath>../parent-oss/pom.xml</relativePath>
 	</parent>
 
@@ -330,7 +330,7 @@
 		<url>http://github.com/sevensource/seven-parents/parent-java</url>
 		<connection>scm:git:git@github.com:sevensource/seven-parents.git</connection>
 		<developerConnection>scm:git:git@github.com:sevensource/seven-parents.git</developerConnection>
-		<tag>HEAD</tag>
+		<tag>v0.9.10</tag>
 	</scm>
 
 	<licenses>
