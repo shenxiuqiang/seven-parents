@@ -23,17 +23,14 @@
 		<logback.version>1.0.9</logback.version>
 		<spring.version>3.2.1.RELEASE</spring.version>
 		<spring.data.version>1.4.0.RELEASE</spring.data.version>
-		<!-- 
-		<cglib.version>2.2.2</cglib.version>
-		 -->
-		 
+		
 		<joda.time.version>2.1</joda.time.version>
 		
 		<thymeleaf.version>2.0.15</thymeleaf.version>
 		<thymeleaf.tiles.version>2.0.0</thymeleaf.tiles.version>
 
 		<mail.version>1.4.5</mail.version>
-		<guava.version>14.0</guava.version>
+		<guava.version>13.0.1</guava.version>
 	</properties>
 
 	<dependencies>
