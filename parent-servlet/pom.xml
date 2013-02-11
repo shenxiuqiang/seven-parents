@@ -3,7 +3,7 @@
 	<parent>
 		<artifactId>parent-java</artifactId>
 		<groupId>org.sevensource.parents</groupId>
-		<version>0.9.9</version>
+		<version>0.9.10</version>
 		<relativePath>../parent-java/pom.xml</relativePath>
 	</parent>
 	
@@ -49,7 +49,6 @@
 			<groupId>org.glassfish.web</groupId>
 			<artifactId>jstl-impl</artifactId>
 			<version>${jstl.version}</version>
-			<!-- <scope>provided</scope> -->
 			<exclusions>
 				<exclusion>
 					<artifactId>servlet-api</artifactId>
@@ -61,24 +60,6 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
-
-
-
-		<!--
-			<dependency>
-			<groupId>javax.el</groupId>
-			<artifactId>el-api</artifactId>
-			<version>1.0</version>
-			<scope>provided</scope>
-			</dependency>
-
-			<dependency>
-			<groupId>javax.servlet.jsp</groupId>
-			<artifactId>jsp-api</artifactId>
-			<version>2.1</version>
-			<scope>provided</scope>
-			</dependency>
-		-->
 	</dependencies>
 
 	<developers>
@@ -92,7 +73,7 @@
 		<url>http://github.com/sevensource/seven-parents/parent-servlet</url>
 		<connection>scm:git:git@github.com:sevensource/seven-parents.git</connection>
 		<developerConnection>scm:git:git@github.com:sevensource/seven-parents.git</developerConnection>
-    <tag>v0.9.9</tag>
+    <tag>v0.9.10</tag>
   </scm>
 
 	<licenses>
