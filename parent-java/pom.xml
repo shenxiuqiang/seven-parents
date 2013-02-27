@@ -22,14 +22,16 @@
 		<slf4j.version>1.7.2</slf4j.version>
 		<logback.version>1.0.9</logback.version>
 		<spring.version>3.2.1.RELEASE</spring.version>
-		<spring.data.version>1.4.0.RELEASE</spring.data.version>
+		<!-- 
+		<spring.data.commons.version>1.5.0.RELEASE</spring.data.commons.version>
+		 -->
 		
 		<joda.time.version>2.1</joda.time.version>
 		
-		<thymeleaf.version>2.0.15</thymeleaf.version>
+		<thymeleaf.version>2.0.16</thymeleaf.version>
 		<thymeleaf.tiles.version>2.0.0</thymeleaf.tiles.version>
 
-		<mail.version>1.4.5</mail.version>
+		<mail.version>1.4.6</mail.version>
 		<guava.version>13.0.1</guava.version>
 	</properties>
 
@@ -37,9 +39,6 @@
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-api</artifactId>
-			<!-- 
-			<scope>provided</scope>
-			 -->
 		</dependency>
 	</dependencies>
 
@@ -73,7 +72,7 @@
 				<version>${slf4j.version}</version>
 			</dependency>
 
-			<!-- needed for sl4j filter expressions, not included by default -->
+			<!-- needed for sl4j filter expressions -->
 			<dependency>
 				<groupId>org.codehaus.janino</groupId>
 				<artifactId>janino</artifactId>
@@ -102,15 +101,6 @@
 					</exclusion>
 				</exclusions>
 			</dependency>
-
-			<!-- 
-			<dependency>
-				<groupId>cglib</groupId>
-				<artifactId>cglib-nodep</artifactId>
-				<version>${cglib.version}</version>
-				<scope>runtime</scope>
-			</dependency>
-			 -->
 			 
 			<dependency>
 				<groupId>org.springframework</groupId>
