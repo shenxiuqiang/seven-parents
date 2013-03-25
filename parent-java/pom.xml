@@ -1,4 +1,5 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
 	<parent>
 		<artifactId>parent-oss</artifactId>
@@ -21,13 +22,10 @@
 
 		<slf4j.version>1.7.2</slf4j.version>
 		<logback.version>1.0.9</logback.version>
-		<spring.version>3.2.1.RELEASE</spring.version>
-		<!-- 
-		<spring.data.commons.version>1.5.0.RELEASE</spring.data.commons.version>
-		 -->
-		
+		<spring.version>3.2.2.RELEASE</spring.version>
+
 		<joda.time.version>2.1</joda.time.version>
-		
+
 		<thymeleaf.version>2.0.16</thymeleaf.version>
 		<thymeleaf.tiles.version>2.0.0</thymeleaf.tiles.version>
 
@@ -101,7 +99,7 @@
 					</exclusion>
 				</exclusions>
 			</dependency>
-			 
+
 			<dependency>
 				<groupId>org.springframework</groupId>
 				<artifactId>spring-orm</artifactId>
@@ -126,7 +124,7 @@
 				<artifactId>spring-context</artifactId>
 				<version>${spring.version}</version>
 			</dependency>
-			
+
 			<dependency>
 				<groupId>org.springframework</groupId>
 				<artifactId>spring-context-support</artifactId>
@@ -172,14 +170,14 @@
 
 
 			<!-- COMMON STUFF -->
-			
+
 			<!-- @Generated, @PostConstruct, etc. -->
 			<dependency>
 				<groupId>javax.annotation</groupId>
 				<artifactId>jsr250-api</artifactId>
 				<version>1.0</version>
 			</dependency>
-			
+
 			<dependency>
 				<groupId>joda-time</groupId>
 				<artifactId>joda-time</artifactId>
@@ -199,7 +197,7 @@
 				<artifactId>commons-lang3</artifactId>
 				<version>3.1</version>
 			</dependency>
-			
+
 			<!-- Preconditions... -->
 			<dependency>
 				<groupId>com.google.guava</groupId>
@@ -304,9 +302,46 @@
 						<encoding>${project.build.sourceEncoding}</encoding>
 					</configuration>
 				</plugin>
+
+				<plugin>
+					<groupId>org.zeroturnaround</groupId>
+					<artifactId>jrebel-maven-plugin</artifactId>
+				</plugin>
+
 			</plugins>
 		</pluginManagement>
 	</build>
+
+
+	<profiles>	
+		<profile>
+			<id>jrebel</id>
+			
+			<!-- trigger the creation of rebel.xml if we're running within eclipse (ie. build by m2e) -->
+			<activation>
+				<property>
+					<name>m2e.version</name>
+				</property>
+			</activation>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.zeroturnaround</groupId>
+						<artifactId>jrebel-maven-plugin</artifactId>
+						<executions>
+							<execution>
+								<id>generate-rebel-xml</id>
+								<phase>process-resources</phase>
+								<goals>
+									<goal>generate</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
 
 
 	<developers>

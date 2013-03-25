@@ -1,4 +1,5 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<artifactId>parent-servlet</artifactId>
@@ -78,6 +79,15 @@
 					<wtpapplicationxml>true</wtpapplicationxml>
 				</configuration>
 			</plugin>
+
+			<!-- override the configuration that is possible set due to profile activation in the parent -->
+			<plugin>
+				<groupId>org.zeroturnaround</groupId>
+				<artifactId>jrebel-maven-plugin</artifactId>
+				<configuration>
+					<warSourceDirectory>src\main\webapp</warSourceDirectory>
+				</configuration>
+			</plugin>
 		</plugins>
 	</build>
 
@@ -92,8 +102,8 @@
 		<url>http://github.com/sevensource/seven-parents/parent-webapp</url>
 		<connection>scm:git:git@github.com:sevensource/seven-parents.git</connection>
 		<developerConnection>scm:git:git@github.com:sevensource/seven-parents.git</developerConnection>
-    <tag>HEAD</tag>
-  </scm>
+		<tag>HEAD</tag>
+	</scm>
 
 	<licenses>
 		<license>

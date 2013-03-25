@@ -62,6 +62,31 @@
 		</dependency>
 	</dependencies>
 
+
+	<profiles>
+		<!-- if we have a Servlet 3.0 META-INF/resources directory, add it to the Jrebel Configuration -->
+		<profile>
+			<id>jrebel-servlet-jar-profile</id>
+			<activation>
+				<file>
+					<exists>src\main\resources\META-INF\resources\</exists>
+				</file>
+			</activation>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.zeroturnaround</groupId>
+						<artifactId>jrebel-maven-plugin</artifactId>
+						<configuration>
+							<warSourceDirectory>src\main\resources\META-INF\resources\</warSourceDirectory>
+							<packaging>war</packaging>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
+
 	<developers>
 		<developer>
 			<id>pgaschuetz</id>
@@ -73,7 +98,7 @@
 		<url>http://github.com/sevensource/seven-parents/parent-servlet</url>
 		<connection>scm:git:git@github.com:sevensource/seven-parents.git</connection>
 		<developerConnection>scm:git:git@github.com:sevensource/seven-parents.git</developerConnection>
-    <tag>HEAD</tag>
+    	<tag>HEAD</tag>
   </scm>
 
 	<licenses>
