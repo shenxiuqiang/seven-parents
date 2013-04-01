@@ -3,7 +3,7 @@
 	<parent>
 		<artifactId>parent-java</artifactId>
 		<groupId>org.sevensource.parents</groupId>
-		<version>0.9.12-SNAPSHOT</version>
+		<version>0.9.11</version>
 		<relativePath>../parent-java/pom.xml</relativePath>
 	</parent>
 	
