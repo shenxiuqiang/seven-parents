@@ -3,7 +3,7 @@
 	<parent>
 		<artifactId>parent-oss</artifactId>
 		<groupId>org.sevensource.parents</groupId>
-		<version>0.9.12-SNAPSHOT</version>
+		<version>0.9.13-SNAPSHOT</version>
 		<relativePath>../parent-oss/pom.xml</relativePath>
 	</parent>
 
