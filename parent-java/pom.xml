@@ -3,7 +3,7 @@
 	<parent>
 		<artifactId>parent-oss</artifactId>
 		<groupId>org.sevensource.parents</groupId>
-		<version>0.9.14</version>
+		<version>0.9.15</version>
 		<relativePath>../parent-oss/pom.xml</relativePath>
 	</parent>
 
@@ -36,7 +36,7 @@
 
 		<lombok.version>0.14.4</lombok.version>
 
-		<mail.version>1.5.2</mail.version>
+		<mail.version>1.4.7</mail.version>
 		<guava.version>17.0</guava.version>
 		
 		<aspectj.version>1.7.2</aspectj.version>
@@ -497,7 +497,7 @@
 		<url>http://github.com/sevensource/seven-parents/parent-java</url>
 		<connection>scm:git:git@github.com:sevensource/seven-parents.git</connection>
 		<developerConnection>scm:git:git@github.com:sevensource/seven-parents.git</developerConnection>
-		<tag>v0.9.14</tag>
+		<tag>v0.9.15</tag>
 	</scm>
 
 	<licenses>
