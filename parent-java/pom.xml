@@ -3,7 +3,7 @@
 	<parent>
 		<artifactId>parent-oss</artifactId>
 		<groupId>org.sevensource.parents</groupId>
-		<version>0.9.12</version>
+		<version>0.9.13-SNAPSHOT</version>
 		<relativePath>../parent-oss/pom.xml</relativePath>
 	</parent>
 
@@ -16,20 +16,31 @@
 	</description>
 
 	<properties>
-		<java.version>1.6</java.version>
+		<java.version>1.7</java.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-		<slf4j.version>1.7.2</slf4j.version>
+		<slf4j.version>1.7.5</slf4j.version>
 		<logback.version>1.0.9</logback.version>
-		<spring.version>3.2.2.RELEASE</spring.version>
+		
+		<spring.version>3.2.3.RELEASE</spring.version>
+		<spring-data-jpa.version>1.3.2.RELEASE</spring-data-jpa.version>
+		<spring-security.version>3.1.4.RELEASE</spring-security.version>
 
-		<joda.time.version>2.1</joda.time.version>
+		<joda-time.version>2.2</joda-time.version>
+		<joda-money.version>0.8</joda-money.version>
+		<usertype.version>3.1.0.CR6</usertype.version>
 
 		<thymeleaf.version>2.0.16</thymeleaf.version>
 		<thymeleaf.tiles.version>2.0.0</thymeleaf.tiles.version>
 
+		<hibernate.version>4.2.1.Final</hibernate.version>
+
+		<lombok.version>0.11.8</lombok.version>
+
 		<mail.version>1.4.6</mail.version>
 		<guava.version>13.0.1</guava.version>
+		
+		<aspectj.version>1.7.2</aspectj.version>
 	</properties>
 
 	<dependencies>
@@ -55,6 +66,13 @@
 				<groupId>org.slf4j</groupId>
 				<artifactId>slf4j-api</artifactId>
 				<version>${slf4j.version}</version>
+			</dependency>
+			
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-simple</artifactId>
+				<version>${slf4j.version}</version>
+				<scope>test</scope>
 			</dependency>
 
 			<dependency>
@@ -141,11 +159,71 @@
 				<artifactId>spring-oxm</artifactId>
 				<version>${spring.version}</version>
 			</dependency>
+			
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-tx</artifactId>
+				<version>${spring.version}</version>
+			</dependency>
+			
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-jdbc</artifactId>
+				<version>${spring.version}</version>
+			</dependency>
 
 			<dependency>
 				<groupId>org.springframework</groupId>
 				<artifactId>spring-web</artifactId>
 				<version>${spring.version}</version>
+			</dependency>
+			
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-aop</artifactId>
+				<version>${spring.version}</version>
+			</dependency>
+			
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-beans</artifactId>
+				<version>${spring.version}</version>
+			</dependency>
+			
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-expression</artifactId>
+				<version>${spring.version}</version>
+			</dependency>
+			
+			<dependency>
+				<groupId>org.springframework.data</groupId>
+				<artifactId>spring-data-jpa</artifactId>
+				<version>${spring-data-jpa.version}</version>
+			</dependency>
+			
+			<dependency>
+				<groupId>org.springframework.security</groupId>
+				<artifactId>spring-security-core</artifactId>
+				<version>${spring-security.version}</version>
+			</dependency>
+			
+			<dependency>
+				<groupId>org.springframework.security</groupId>
+				<artifactId>spring-security-web</artifactId>
+				<version>${spring-security.version}</version>
+			</dependency>
+			
+			<dependency>
+				<groupId>org.springframework.security</groupId>
+				<artifactId>spring-security-config</artifactId>
+				<version>${spring-security.version}</version>
+			</dependency>
+			
+			<dependency>
+				<groupId>org.springframework.security</groupId>
+				<artifactId>spring-security-aspects</artifactId>
+				<version>${spring-security.version}</version>
 			</dependency>
 
 			<!-- THYMELEAF TEMPLATES -->
@@ -166,6 +244,19 @@
 				<artifactId>thymeleaf-extras-tiles2</artifactId>
 				<version>${thymeleaf.tiles.version}</version>
 			</dependency>
+			
+			
+			<dependency>
+				<groupId>org.hibernate</groupId>
+				<artifactId>hibernate-entitymanager</artifactId>
+				<version>${hibernate.version}</version>
+			</dependency>
+			
+			<dependency>
+				<groupId>org.hibernate.javax.persistence</groupId>
+				<artifactId>hibernate-jpa-2.0-api</artifactId>
+				<version>1.0.1.Final</version>
+			</dependency>
 
 
 			<!-- COMMON STUFF -->
@@ -180,7 +271,42 @@
 			<dependency>
 				<groupId>joda-time</groupId>
 				<artifactId>joda-time</artifactId>
-				<version>${joda.time.version}</version>
+				<version>${joda-time.version}</version>
+			</dependency>
+			
+			<dependency>
+				<groupId>org.joda</groupId>
+				<artifactId>joda-money</artifactId>
+				<version>${joda-money.version}</version>
+			</dependency>
+			
+			<dependency>
+				<groupId>org.jadira.usertype</groupId>
+				<artifactId>usertype.core</artifactId>
+				<version>${usertype.version}</version>
+				<exclusions>
+					<exclusion>
+						<artifactId>joda-money</artifactId>
+						<groupId>org.joda</groupId>
+					</exclusion>
+					<exclusion>
+						<groupId>org.hibernate</groupId>
+						<artifactId>hibernate-entitymanager</artifactId>
+					</exclusion>
+				</exclusions>
+			</dependency>
+			
+			<dependency>
+				<groupId>org.jadira.cdt</groupId>
+				<artifactId>cdt</artifactId>
+				<version>${usertype.version}</version>
+			</dependency>
+			
+			<dependency>
+				<groupId>org.projectlombok</groupId>
+				<artifactId>lombok</artifactId>
+				<version>${lombok.version}</version>
+				<scope>provided</scope>
 			</dependency>
 
 			<!-- Mail -->
@@ -205,9 +331,21 @@
 			</dependency>
 
 			<dependency>
+				<groupId>org.aspectj</groupId>
+				<artifactId>aspectjrt</artifactId>
+				<version>${aspectj.version}</version>
+			</dependency>
+			
+			<dependency>
+				<groupId>org.aspectj</groupId>
+				<artifactId>aspectjtools</artifactId>
+				<version>${aspectj.version}</version>
+			</dependency>
+
+			<dependency>
 				<groupId>org.testng</groupId>
 				<artifactId>testng</artifactId>
-				<version>6.5.1</version>
+				<version>6.8.1</version>
 				<scope>test</scope>
 			</dependency>
 
@@ -219,7 +357,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.0</version>
+				<version>3.1</version>
 				<configuration>
 					<source>${java.version}</source>
 					<target>${java.version}</target>
@@ -270,6 +408,11 @@
 						<dependency>
 							<groupId>org.aspectj</groupId>
 							<artifactId>aspectjtools</artifactId>
+							<version>${aspectj.version}</version>
+						</dependency>
+						<dependency>
+							<groupId>org.aspectj</groupId>
+							<artifactId>aspectjweaver</artifactId>
 							<version>${aspectj.version}</version>
 						</dependency>
 					</dependencies>
@@ -355,7 +498,7 @@
 		<url>http://github.com/sevensource/seven-parents/parent-java</url>
 		<connection>scm:git:git@github.com:sevensource/seven-parents.git</connection>
 		<developerConnection>scm:git:git@github.com:sevensource/seven-parents.git</developerConnection>
-		<tag>v0.9.12</tag>
+		<tag>HEAD</tag>
 	</scm>
 
 	<licenses>
