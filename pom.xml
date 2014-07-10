@@ -3,7 +3,7 @@
 
 	<groupId>org.sevensource.parents</groupId>
 	<artifactId>seven-parents</artifactId>
-	<version>0.9.13-SNAPSHOT</version>
+	<version>0.9.14</version>
 	<packaging>pom</packaging>
 	<name>SevenSource Parents aggregation POM</name>
 	<description>SevenSource parents aggregation POM</description>
@@ -27,7 +27,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-release-plugin</artifactId>
-				<version>2.3.2</version>
+				<version>2.5</version>
 				<configuration>
 					<autoVersionSubmodules>true</autoVersionSubmodules>
 					<pushChanges>false</pushChanges>
@@ -51,7 +51,7 @@
 		<url>http://github.com/sevensource/seven-parents</url>
 		<connection>scm:git:git@github.com:sevensource/seven-parents.git</connection>
 		<developerConnection>scm:git:git@github.com:sevensource/seven-parents.git</developerConnection>
-		<tag>HEAD</tag>
+		<tag>v0.9.14</tag>
 	</scm>
 
 	<licenses>
