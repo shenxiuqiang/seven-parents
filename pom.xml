@@ -3,7 +3,7 @@
 
 	<groupId>org.sevensource.parents</groupId>
 	<artifactId>seven-parents</artifactId>
-	<version>0.9.14</version>
+	<version>0.9.15-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<name>SevenSource Parents aggregation POM</name>
 	<description>SevenSource parents aggregation POM</description>
@@ -51,7 +51,7 @@
 		<url>http://github.com/sevensource/seven-parents</url>
 		<connection>scm:git:git@github.com:sevensource/seven-parents.git</connection>
 		<developerConnection>scm:git:git@github.com:sevensource/seven-parents.git</developerConnection>
-		<tag>v0.9.14</tag>
+		<tag>HEAD</tag>
 	</scm>
 
 	<licenses>
