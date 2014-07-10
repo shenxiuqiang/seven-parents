@@ -10,7 +10,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.sevensource.parents</groupId>
 	<artifactId>parent-oss</artifactId>
-	<version>0.9.14-SNAPSHOT</version>
+	<version>0.9.15-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
 	<description>
